@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaibhav Raj — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-topbar">
+    <div class="social-links">
+      <a href="https://www.instagram.com/ortus3802?igsh=dmx1ZnR1NXlmZzU3" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:your@email.com">Mail</a>
+    </div>
+    <nav class="nav-cats" id="desktop-nav">
+      <button class="active" onclick="filterCat('MOV',this)">Moving Images</button>
+      <button onclick="filterCat('3D',this)">3D</button>
+      <button onclick="filterCat('PHOTO',this)">Photography</button>
+      <button onclick="filterCat('ANALOG',this)">Analog</button>
+      <button onclick="filterCat('ILLUSTRATION',this)">Illustration</button>
+      <button onclick="showAbout()">About</button>
+    </nav>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <a class="header-logo-wrap" href="#" onclick="showHome(); closeMobileMenu(); return false;">
+    <div class="logo-circle">V</div>
+    <div class="logo-name">Vaibhav Raj</div>
+  </a>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="active" onclick="filterCat('MOV',this,true)">Moving Images</button>
+    <button onclick="filterCat('3D',this,true)">3D</button>
+    <button onclick="filterCat('PHOTO',this,true)">Photography</button>
+    <button onclick="filterCat('ANALOG',this,true)">Analog</button>
+    <button onclick="filterCat('ILLUSTRATION',this,true)">Illustration</button>
+    <button onclick="showAbout(); closeMobileMenu()">About</button>
+  </div>
+</header>
+
+<div id="home-view">
+  <div class="section-label">Moving Images</div>
+  <div class="project-list">
+
+    <!-- index 0: Animation Workshop -->
+    <div class="project-card" data-cat="MOV" onclick="showDetail(0)">
+      <div class="card-num">01</div>
+      <div class="card-thumb"><div class="card-thumb-placeholder">Image</div></div>
+      <div class="card-body">
+        <div class="card-tag">Animation · Workshop</div>
+        <div class="card-title">Animation Workshop</div>
+        <div class="card-desc">Frame-by-frame and motion-based animation workshop exercises.</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </div>
+
+    <!-- index 1: Comic Book -->
+    <div class="project-card" data-cat="MOV" onclick="showDetail(1)">
+      <div class="card-num">02</div>
+      <div class="card-thumb"><img src="images/Comic Thumbnail.png" alt="Comic Book Thumbnail"></div>
+      <div class="card-body">
+        <div class="card-tag">Moving Image · Sequential Art</div>
+        <div class="card-title">Comic Book</div>
+        <div class="card-desc">Comic book and sequential art exploration.</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </div>
+
+    <!-- index 2: Spatial Mythification -->
+    <div class="project-card" data-cat="MOV" onclick="showDetail(2)">
+      <div class="card-num">03</div>
+      <div class="card-thumb"><img src="images/Documentary.jpg" alt="Spatial Mythification Thumbnail"></div>
+      <div class="card-body">
+        <div class="card-tag">Documentary · Individual Project</div>
+        <div class="card-title">Spatial Mythification</div>
+        <div class="card-desc">Architecture, myth and memory — exploring how space shapes cultural narratives.</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </div>
+
+    <!-- index 3: Doors -->
+    <div class="project-card" data-cat="MOV" onclick="showDetail(3)">
+      <div class="card-num">04</div>
+      <div class="card-thumb"><img src="images/Doors Thumbnail.png" alt="Doors Thumbnail"></div>
+      <div class="card-body">
+        <div class="card-tag">Moving Image · Experimental</div>
+        <div class="card-title">Doors</div>
+        <div class="card-desc">A visual experimental exploration of moral impurity.</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </div>
+
+    <!-- index 4: Fiction (WIP) -->
+    <div class="project-card" data-cat="MOV" onclick="showDetail(4)">
+      <div class="card-num">05</div>
+      <div class="card-thumb"><div class="card-thumb-placeholder">Image</div></div>
+      <div class="card-body">
+        <div class="card-tag">Fiction · WIP</div>
+        <div class="card-title">Fiction (WIP)</div>
+        <div class="card-desc">Work-in-progress fiction short — script, storyboard and early production notes.</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </div>
+
+    <!-- index 5: Water -->
+    <div class="project-card" data-cat="MOV" onclick="showDetail(5)">
+      <div class="card-num">06</div>
+      <div class="card-thumb"><img src="images/Water the reservoir of memories.png" alt="Water Thumbnail"></div>
+      <div class="card-body">
+        <div class="card-tag">Animation · KHM Collaboration</div>
+        <div class="card-title">Water — Reservoir of Memories</div>
+        <div class="card-desc">Experimental animation in collaboration with KHM and Anant Nalya.</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </div>
+
+    <!-- index 6: A Quiet Escape -->
+    <div class="project-card" data-cat="MOV" onclick="showDetail(6)">
+      <div class="card-num">07</div>
+      <div class="card-thumb"><img src="images/production design1.png" alt="A Quiet Escape Thumbnail"></div>
+      <div class="card-body">
+        <div class="card-tag">Fiction · Group Project</div>
+        <div class="card-title">A Quiet Escape — Production Design</div>
+        <div class="card-desc">Production designer on a paranoia thriller — set dressing and spatial design.</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </div>
+
+    <!-- index 7: Memories -->
+    <div class="project-card" data-cat="MOV" onclick="showDetail(7)">
+      <div class="card-num">08</div>
+      <div class="card-thumb"><img src="images/Memories Thumbnail.png" alt="Water Thumbnail"></div>
+      <div class="card-body">
+        <div class="card-tag">Moving Image · Personal</div>
+        <div class="card-title">Memories</div>
+        <div class="card-desc">A visual exploration of personal memories and moments through time.</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </div>
+
+    <!-- index 8: Stopmotion -->
+    <div class="project-card" data-cat="MOV" onclick="showDetail(8)">
+      <div class="card-num">09</div>
+      <div class="card-thumb"><img src="images/Stopmotion Thumbnail.png" alt="StopMotion Thumbnail"></div>
+      <div class="card-body">
+        <div class="card-tag">Animation · Stop Motion</div>
+        <div class="card-title">Stopmotion</div>
+        <div class="card-desc">Stop-motion animation — concept, construction and frame-by-frame execution.</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </div>
+
+    <!-- index 9: Whiff of Time -->
+    <div class="project-card" data-cat="MOV" onclick="showDetail(9)">
+      <div class="card-num">10</div>
+      <div class="card-thumb"><img src="images/The Whiff of Time Thumbnail.png" alt="Whiff of Time Thumbnail"></div>
+      <div class="card-body">
+        <div class="card-tag">Experimental · Individual Project</div>
+        <div class="card-title">Whiff of Time</div>
+        <div class="card-desc">A poetic experiment on nostalgia, memory and the smell of old things.</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </div>
+
+  </div>
+</div>
+
+<div id="detail-view">
+  <div class="detail-hero">
+    <button class="hero-back" onclick="showHome()">← Back</button>
+    <img src="" alt="Project Hero Image">
+    <div class="hero-placeholder" style="display:none;">No Image Available</div>
+    <div class="hero-overlay">
+      <div class="hero-text">
+        <div class="hero-tag"></div>
+        <div class="hero-title"></div>
+        <div class="hero-desc"></div>
+      </div>
+    </div>
+  </div>
+  <div class="detail-content">
+    <div class="writeup-label">Project Writeup</div>
+    <div class="writeup-text"></div>
+
+    <a class="drive-btn" href="#" target="_blank" rel="noopener">
+      Open in Google Drive ↗
+    </a>
+    <div class="drive-btn-hint">Opens in a new tab</div>
+
+    <div id="gallery-section" style="margin-top: 48px;">
+      <div class="writeup-label">Film Stills</div>
+      <div id="stills-gallery" class="gallery-thumbs-container"></div>
+    </div>
+  </div>
+
+  <div class="next-project">
+    <div>
+      <div class="next-label">Next Project</div>
+      <div class="next-title"></div>
+    </div>
+    <div class="next-arrow">→</div>
+  </div>
+</div>
+
+<div id="grid-view">
+  <div class="section-label" id="grid-section-label">Photography</div>
+  <div class="insta-grid" id="insta-grid"></div>
+  <div class="next-project" id="grid-next" onclick="">
+    <div>
+      <div class="next-label">Next</div>
+      <div class="next-title" id="grid-next-title"></div>
+    </div>
+    <div class="next-arrow">→</div>
+  </div>
+</div>
+
+<div id="about-view">
+  <div class="about-title">Vaibhav</div>
+  <div class="about-body">
+    <p>I am a visual practitioner and researcher specializing in experimental moving images, space setups, and multi-media design structures across digital and analog formats.</p>
+    <p>This space catalogs core framework items created between 2023 and 2026, mapping experimental growth in modern storytelling metrics.</p>
+  </div>
+</div>
+
+<footer>
+  <div>© Vaibhav Raj</div>
+  <div>Built with clean structure</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
